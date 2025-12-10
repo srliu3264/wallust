@@ -1,0 +1,135 @@
+/* =========================================================
+   WALLUST GENERATED FIREFOX THEME
+   ========================================================= */
+
+:root {
+  /* --- Color Mapping --- */
+  --wal-bg:     {{color2}} !important;
+  --wal-fg:     {{color15}} !important;
+  --wal-accent: {{color4}} !important;
+  --wal-dim:    {{color8}} !important;
+  --wal-border: {{color0}} !important;
+  --wal-urgent: {{color5}} !important;
+
+  /* --- Firefox Internal Overrides --- */
+  --toolbar-bgcolor: var(--wal-bg) !important;
+  --tab-selected-bgcolor: var(--wal-accent) !important;
+  --lwt-selected-tab-background-color: var(--wal-accent) !important;
+  --toolbar-color: var(--wal-fg) !important;
+  --arrowpanel-background: var(--wal-bg) !important;
+  --arrowpanel-color: var(--wal-fg) !important;
+  --arrowpanel-border-color: var(--wal-accent) !important;
+}
+
+/* =========================================================
+   1. MAIN TOOLBAR & TABS
+   ========================================================= */
+
+/* Main Bar Background */
+#navigator-toolbox {
+  background-color: var(--wal-bg) !important;
+  border-bottom: 1px solid var(--wal-border) !important;
+}
+
+/* Active Tab: Flat color + White text (usually looks best on accent) */
+.tab-background:is([selected], [multiselected]) {
+  background-color: var(--wal-accent) !important;
+  background-image: none !important;
+  border-radius: 4px !important; /* Slight rounding looks modern */
+}
+
+/* Fix text color on the active tab to ensure readability */
+.tabbrowser-tab[selected] .tab-label {
+  color: var(--wal-bg) !important; /* Invert text on active tab */
+  font-weight: bold !important;
+}
+
+/* Inactive Tab Hover Effect */
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
+  background-color: var(--wal-dim) !important;
+  border-radius: 4px !important;
+}
+
+/* Remove the annoying "playing media" text line above tabs */
+.tab-line {
+  display: none !important;
+}
+
+/* =========================================================
+   2. URL BAR (OMNIBOX)
+   ========================================================= */
+/* 1. FORCE TRANSPARENT ICONS */
+#identity-box,
+#tracking-protection-icon-container,
+#identity-icon-box,
+.urlbar-icon,
+.urlbar-input-box {
+  background-color: var(--wal-bg) !important;
+  background-image: var(--wal-bg) !important;
+  color: {{foreground}} !important;
+}
+
+/* 2. INACTIVE STATE*/
+#urlbar:not([focused="true"]) > #urlbar-background {
+  background-color: {{color1}} !important;
+  color: {{foreground}} !important;
+}
+
+/* 3. ACTIVE/FOCUSED STATE (Crucial Fix)
+   We explicitly set the background to 'color0' (Dark) instead of Firefox's default white.
+   We force the text to be 'foreground' (Light). */
+#urlbar[focused="true"] > #urlbar-background {
+  background-color: {{color2}} !important; /* Force Dark Background */
+  box-shadow: 0 0 2px {{color4}} !important; /* Optional accent glow */
+}
+
+/* 4. INPUT TEXT COLOR
+   Force the actual text you type to be the foreground color */
+#urlbar-input, 
+#urlbar-scheme,
+.urlbar-input {
+  color: {{foreground}} !important;
+  background-color: transparent !important;
+}
+
+/* 5. SEARCH RESULTS DROPDOWN
+   Ensure the popup menu below is also readable */
+.urlbarView {
+  background-color: {{color0}} !important;
+  color: {{foreground}} !important;
+}
+
+/* Highlight the row you select in the dropdown */
+.urlbarView-row:hover,
+.urlbarView-row[selected] {
+  background-color: {{color2}} !important;
+  color: {{foreground}} !important;
+}}/* =========================================================
+   3. SIDEBAR & MENUS
+   ========================================================= */
+
+/* Sidebar (if you use it) */
+#sidebar-box, .sidebar-placesTree {
+  background-color: var(--wal-bg) !important;
+  color: var(--wal-fg) !important;
+}
+
+/* Sidebar Header */
+#sidebar-header {
+  background-color: var(--wal-bg) !important;
+  border-bottom: 1px solid var(--wal-border) !important;
+}
+
+/* Right-click Menus & Hamburger Menu */
+/* This targets the panels you were trying to theme earlier */
+.panel-arrowcontent, #appMenu-popup panelview {
+  background: var(--wal-bg) !important;
+  border: 1px solid var(--wal-accent) !important;
+  color: var(--wal-fg) !important;
+}
+
+/* Menu Items Hover Color */
+toolbarbutton:hover, .subviewbutton:hover, .protections-popup-footer-button:hover {
+  background-color: var(--wal-accent) !important;
+  color: var(--wal-bg) !important; /* Invert text on hover */
+}
