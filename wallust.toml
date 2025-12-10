@@ -1,0 +1,14 @@
+# Wallust v3 Configuration
+backend = "thumb"
+filter = "dark16"
+check_contrast = true
+
+[templates]
+
+awesome = { template = "/home/srliu/.config/wallust/templates/colors.lua", target = "/home/srliu/.config/awesome/colors.lua" }
+
+
+xresources = { template = "/home/srliu/.config/wallust/templates/Xresources", target = "/home/srliu/.Xresources", after = "xrdb -merge /home/srliu/.Xresources" }
+
+zathura = { template = '/home/srliu/.config/wallust/templates/zathurarc', target = '~/.config/zathura/zathurarc' }
+
