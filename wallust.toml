@@ -13,3 +13,5 @@ xresources = { template = "/home/srliu/.config/wallust/templates/Xresources", ta
 zathura = { template = '/home/srliu/.config/wallust/templates/zathurarc', target = '/home/srliu/.config/zathura/zathurarc' }
 
 firefox = { template = '/home/srliu/.config/wallust/templates/userChrome.css', target = '/home/srliu/.mozilla/firefox/bhjx92cu.default-release/chrome/userChrome.css'}
+
+kitty = { template = '/home/srliu/.config/wallust/templates/colors-kitty.conf', target = "/home/srliu/.config/kitty/colors.conf"}
