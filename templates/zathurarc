@@ -16,8 +16,8 @@ set notification-error-bg "{{foreground}}"
 set notification-warning-fg "{{color3}}"
 set notification-warning-bg "{{foreground}}"
 
-set highlight-color "{{color2}}"
-set highlight-active-color "{{color4}}"
+set highlight-color "{{color2}}44"
+set highlight-active-color "{{color4}}44"
 
 set completion-bg "{{background}}"
 set completion-fg "{{color2}}"
