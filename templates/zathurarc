@@ -1,30 +1,54 @@
-include zathura-colors
+# General Settings
 set selection-clipboard clipboard
 
-set default-fg "{{background}}"
-set default-bg "{{foreground}}"
+# -----------------------------------------------------------------------------
+# Zathura Colors (Corrected for Dark Mode)
+# -----------------------------------------------------------------------------
 
-set statusbar-fg "{{background}}"
-set statusbar-bg "{{foreground}}"
+# Base Interface Colors
+set default-bg                  "{{background}}"
+set default-fg                  "{{foreground}}"
 
-set inputbar-fg "{{background}}"
-set inputbar-bg "{{foreground}}"
+set statusbar-bg                "{{background}}"
+set statusbar-fg                "{{foreground}}"
 
-set notification-error-fg "{{color1}}"
-set notification-error-bg "{{foreground}}"
+set inputbar-bg                 "{{background}}"
+set inputbar-fg                 "{{foreground}}"
 
-set notification-warning-fg "{{color3}}"
-set notification-warning-bg "{{foreground}}"
+set notification-bg             "{{background}}"
+set notification-fg             "{{foreground}}"
 
-set highlight-color "{{color2}}44"
-set highlight-active-color "{{color4}}44"
+set notification-error-bg       "{{color1}}"
+set notification-error-fg       "{{foreground}}"
 
-set completion-bg "{{background}}"
-set completion-fg "{{color2}}"
+set notification-warning-bg     "{{color3}}"
+set notification-warning-fg     "{{background}}"
 
-set completion-highlight-fg "{{background}}"
-set completion-highlight-bg "{{color2}}"
+# Selection / Highlight Colors
+# Using alpha blending (44) for highlights allows text to remain readable
+set highlight-color             "{{color2}}"
+set highlight-active-color      "{{color4}}"
 
-set recolor-lightcolor "{{foreground}}"
-set recolor-darkcolor "{{background}}"
-set recolor "true"
+set completion-bg               "{{background}}"
+set completion-fg               "{{foreground}}"
+
+set completion-highlight-bg     "{{color2}}"
+set completion-highlight-fg     "{{background}}"
+
+set completion-group-bg         "{{background}}"
+set completion-group-fg         "{{color2}}"
+
+# -----------------------------------------------------------------------------
+# Recolor Settings (The "Dark Mode" for PDFs)
+# -----------------------------------------------------------------------------
+
+set recolor                     "true"
+
+# KEEP HUE: Essential so images/graphs don't look inverted/horrible
+set recolor-keephue             "true"
+
+# The "Paper" color (Make it your dark background)
+set recolor-lightcolor          "{{background}}"
+
+# The "Text" color (Make it your light foreground)
+set recolor-darkcolor           "{{foreground}}"
